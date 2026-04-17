@@ -16,6 +16,15 @@
 		<a href="https://github.com/cupcakearmy/cryptgeon" target="_blank" rel="noopener noreferrer">
 			code
 		</a>
+		<span class="brand" aria-hidden="true">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 144" fill="none">
+				<path d="M48 12 L72 12 L82 28 L60 56 L38 28 Z" fill="#59BF8F" />
+				<g stroke="currentColor" stroke-width="24" stroke-linecap="round">
+					<line x1="32" y1="80" x2="88" y2="132" />
+					<line x1="88" y1="80" x2="32" y2="132" />
+				</g>
+			</svg>
+		</span>
 	</nav>
 </footer>
 
@@ -41,5 +50,17 @@
 		flex-direction: row;
 		justify-content: flex-end;
 		align-items: center;
+	}
+
+	.brand {
+		display: inline-flex;
+		align-items: center;
+		margin-left: 0.5rem;
+		color: var(--ui-text-0);
+	}
+
+	.brand svg {
+		height: 1.4rem;
+		width: auto;
 	}
 </style>

@@ -7,46 +7,62 @@
 :root {
 	font-family: 'Fira Mono', monospace;
 
-	--ui-bg-0: #111;
-	--ui-bg-0-85: #111111d9;
-	--ui-bg-1: #333;
-	--ui-bg-2: #444;
+	/* Axexo — Dark surface (default) */
+	--ui-bg-0: #0b0b0b;
+	--ui-bg-0-85: #0b0b0bd9;
+	--ui-bg-1: #1c1c1c;
+	--ui-bg-2: #2a2a2a;
 	--ui-text-0: #fefefe;
-	--ui-text-1: #eee;
-	--ui-clr-primary: hsl(186, 65%, 55%);
-	--ui-clr-primary-alt: hsl(186, 85%, 35%);
+	--ui-text-1: #d7d7d7;
+
+	/* Axexo brand accents */
+	--ui-clr-primary: #59bf8f;        /* Axexo green */
+	--ui-clr-primary-alt: #3fa575;    /* Darker shade for press/hover */
+	--ui-clr-primary-soft: #59bf8f22; /* Soft tint for focus glows */
+
 	--ui-clr-error: hsl(357, 77%, 51%);
 	--ui-clr-error-alt: hsl(357, 87%, 41%);
+
+	/* Axexo secondary palette (reserved for data viz per brand guide) */
+	--ui-clr-accent-gold: #ffc814;
+	--ui-clr-accent-blue: #009bff;
+	--ui-clr-accent-orange: #ff6700;
+	--ui-clr-accent-purple: #d077ff;
+	--ui-clr-accent-cyan: #00d7df;
+	--ui-clr-accent-lime: #89cd00;
 
 	--ui-anim: all 150ms ease;
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--ui-bg-0: #fefefe;
-		--ui-bg-0-85: #fefefed9;
-		--ui-bg-1: #eee;
+		--ui-bg-0: #ffffff;
+		--ui-bg-0-85: #ffffffd9;
+		--ui-bg-1: #f2f2f2;
 		--ui-bg-2: #e2e2e2;
-		--ui-text-0: #111;
-		--ui-text-1: #333;
+		--ui-text-0: #0b0b0b;
+		--ui-text-1: #333333;
+		--ui-clr-primary-alt: #2f8a5e; /* Slightly darker green reads better on white */
 	}
 }
 
 :root[theme='dark'] {
-	--ui-bg-0: #111 !important;
-	--ui-bg-0-85: #111111d9 !important;
-	--ui-bg-1: #333 !important;
-	--ui-bg-2: #444 !important;
+	--ui-bg-0: #0b0b0b !important;
+	--ui-bg-0-85: #0b0b0bd9 !important;
+	--ui-bg-1: #1c1c1c !important;
+	--ui-bg-2: #2a2a2a !important;
 	--ui-text-0: #fefefe !important;
-	--ui-text-1: #eee !important;
+	--ui-text-1: #d7d7d7 !important;
+	--ui-clr-primary-alt: #3fa575 !important;
 }
 :root[theme='light'] {
-	--ui-bg-0: #fefefe !important;
-	--ui-bg-0-85: #fefefed9 !important;
-	--ui-bg-1: #eee !important;
+	--ui-bg-0: #ffffff !important;
+	--ui-bg-0-85: #ffffffd9 !important;
+	--ui-bg-1: #f2f2f2 !important;
 	--ui-bg-2: #e2e2e2 !important;
-	--ui-text-0: #111 !important;
-	--ui-text-1: #333 !important;
+	--ui-text-0: #0b0b0b !important;
+	--ui-text-1: #333333 !important;
+	--ui-clr-primary-alt: #2f8a5e !important;
 }
 
 .error-text {
@@ -60,20 +76,26 @@ body {
 	color: var(--ui-text-0);
 }
 
+::selection {
+	background-color: var(--ui-clr-primary);
+	color: var(--ui-bg-0);
+}
+
 a {
 	color: inherit;
 	text-decoration: inherit;
 	box-sizing: content-box;
 	border-bottom: 2px solid var(--ui-bg-2);
 	cursor: pointer;
+	transition: var(--ui-anim);
 }
 
 a:active {
-	border-color: var(--ui-clr-primary);
+	border-color: var(--ui-clr-primary-alt);
 }
 
 a:hover {
-	border-color: var(--ui-text-0);
+	border-color: var(--ui-clr-primary);
 }
 
 input,
@@ -89,6 +111,12 @@ button {
 	color: inherit;
 	border: none;
 	padding-inline: initial;
+}
+
+/* Subtle focus ring in Axexo green for any focusable element */
+:focus-visible {
+	outline: 2px solid var(--ui-clr-primary);
+	outline-offset: 2px;
 }
 
 *:disabled,
@@ -135,4 +163,13 @@ hr {
 
 p {
 	margin: 0;
+}
+
+/* Inline code chips pick up Axexo green for subtle brand presence */
+code {
+	color: var(--ui-clr-primary);
+	background-color: var(--ui-bg-1);
+	padding: 0.05rem 0.35rem;
+	border-radius: 2px;
+	font-size: 0.95em;
 }

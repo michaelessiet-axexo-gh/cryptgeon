@@ -4,15 +4,27 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>About — Axexo</title>
 </svelte:head>
 
 <section class="content">
+	<div class="mark" aria-hidden="true">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 144" fill="none">
+			<path d="M48 12 L72 12 L82 28 L60 56 L38 28 Z" fill="#59BF8F" />
+			<g stroke="currentColor" stroke-width="24" stroke-linecap="round">
+				<line x1="32" y1="80" x2="88" y2="132" />
+				<line x1="88" y1="80" x2="32" y2="132" />
+			</g>
+		</svg>
+	</div>
+
 	<h1>About</h1>
 
 	<p>
-		<i>cryptgeon</i> is a secure, open source sharing note / file service inspired by
-		<a href="https://privnote.com"><i>PrivNote</i></a>.
+		<i>Axexo</i> is a secure note and file sharing tool, built on the open-source
+		<a href="https://github.com/cupcakearmy/cryptgeon" target="_blank" rel="noopener noreferrer"
+			>cryptgeon</a
+		> project.
 	</p>
 
 	<AboutParagraph title="how does it work?">
@@ -51,8 +63,7 @@
 				href="https://lokalise.com/"
 				target="_blank"
 				rel="noopener noreferrer">Lokalise</a
-			>, which granted an open source license to use the paid version. If you are interested in
-			helping translating don't hesitate to contact me!
+			>, which granted an open source license to the upstream project.
 		</span>
 	</AboutParagraph>
 
@@ -78,6 +89,18 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+	}
+
+	.mark {
+		display: flex;
+		justify-content: center;
+		margin-bottom: -1rem;
+	}
+
+	.mark svg {
+		width: 4rem;
+		height: auto;
+		color: var(--ui-text-0);
 	}
 
 	ul {
